@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from spikingjelly.activation_based import functional
-from models import spiking_time_unet, timeseries_unet
+from src.neural_nets import spiking_time_unet, timeseries_unet
 from torch.utils.data import Dataset, DataLoader
 
 class SpikingDiffusionModel:

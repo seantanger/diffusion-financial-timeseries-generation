@@ -1,0 +1,9 @@
+# Models
+models/
+*.pt
+*.pth
+*.bin
+
+.venv
+
+__pycache__/

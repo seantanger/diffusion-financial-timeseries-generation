@@ -6,9 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from torch.utils.data import Dataset, DataLoader
 import scipy.stats as stats
-from diffusion import DiffusionModel, SpikingDiffusionModel
-from dataset import GBMDataset, HestonDataset
-from metrics import plot_metrics_comparison, plot_paths_and_prices
+from src.diffusion import DiffusionModel, SpikingDiffusionModel
+from src.dataset import GBMDataset, HestonDataset
+from src.metrics import plot_metrics_comparison, plot_paths_and_prices
 # from syops import get_model_complexity_info
 from torch.nn import DataParallel
 
