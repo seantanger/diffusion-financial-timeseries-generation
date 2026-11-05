@@ -96,7 +96,3 @@ Outputs in `--folderdir`: the saved model (`.pt`), `paths.npz` with the original
 ## Acknowledgments
 
 We would like to thank the authors of [syops-counter](https://github.com/iCGY96/syops-counter), [SDDPM](https://github.com/AndyCao1125/SDDPM), [pytorch-DDPM](https://github.com/w86763777/pytorch-ddpm), and [spikingjelly](https://github.com/fangwei123456/spikingjelly). This project builds upon their open-source work.
-
-## License
-
-MIT, see [LICENSE](LICENSE). The spiking U-Net in `models/spiking_time_unet.py` is adapted from [SDDPM](https://github.com/AndyCao1125/SDDPM), which does not publish a license, so those adapted parts remain under its authors' terms.
