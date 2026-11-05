@@ -13,14 +13,23 @@ from metrics import plot_metrics_comparison, plot_paths_and_prices
 from torch.nn import DataParallel
 
 import argparse
+
+def str2bool(v):
+    # argparse treats any non-empty string as True, so '--spiking=False' used to enable spiking
+    if v.lower() in ('true', '1', 'yes'):
+        return True
+    if v.lower() in ('false', '0', 'no'):
+        return False
+    raise argparse.ArgumentTypeError(f"expected True or False, got '{v}'")
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--train', action='store_true', default=False, help='train from scratch')
 parser.add_argument('--tune', action='store_true', default=False, help='tune drift and volatility')
 parser.add_argument('--folderdir', default='scale', type=str, help='folder path')
 parser.add_argument('--schedule', default='linear', type=str, help='diffusion scheduler')
-parser.add_argument('--parallel', default=False, help='parallel training')
+parser.add_argument('--parallel', type=str2bool, default=False, help='parallel training (True/False)')
 parser.add_argument('--dataset', type=str, default='GBM', help='dataset name')
-parser.add_argument('--spiking', default=False, help='spiking or non spiking diffusion model')
+parser.add_argument('--spiking', type=str2bool, default=False, help='spiking or non spiking diffusion model (True/False)')
 
 # Training
 parser.add_argument('--resume', action='store_true', default=False, help="load pre-trained model")
